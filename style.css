@@ -53,12 +53,17 @@ body {
   justify-content: flex-start;
 }
 
+
 /* Header */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  /* justify-content: space-between; */
   align-items: center;
   margin-bottom: 20px;
+  background-color: #000;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 .logo {
   display: flex;
