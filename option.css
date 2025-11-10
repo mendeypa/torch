@@ -1,10 +1,20 @@
-:root {
+/* :root {
   --bg-mobile: linear-gradient(135deg, #4a1a1a 0%, #8b1e1e 50%, #c72c2c 100%);
   --bg-desktop: radial-gradient(circle at 30% 70%, #ff3b3b 0%, #a11313 50%, #2e0b0b 100%);
   --text: #ffffff;
   --accent: #ff6b6b;
   --pill: linear-gradient(90deg, #ff8e53, #ff3b3b);
   --glow: 0 0 20px rgba(255, 107, 107, 0.6);
+} */
+
+:root {
+  --bg-mobile: linear-gradient(135deg, #c82020, #ff3333, #ff6666);
+  --bg-desktop: radial-gradient(circle at center, #ff2a2a 0%, #ff0000 45%, #ff7070 100%);
+
+  --text: #ffffff;
+  --accent: #ffe6e6;
+  --pill: linear-gradient(90deg, #ff5050, #ff1e1e);
+  --glow: 0 0 40px rgba(255, 0, 0, 0.75);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,7 +55,7 @@ body {
 }
 
 .wallet-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(68, 54, 54, 0.05);
   border-radius: 16px;
   padding: 20px 10px;
   transition: 0.3s;

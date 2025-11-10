@@ -1,14 +1,29 @@
-:root {
+/* :root {
   --bg-mobile: linear-gradient(135deg, #4a1a1a 0%, #8b1e1e 50%, #c72c2c 100%);
   --bg-desktop: radial-gradient(circle at 30% 70%, #ff3b3b 0%, #a11313 50%, #2e0b0b 100%);
   --text: #ffffff;
   --accent: #ff6b6b;
   --pill: linear-gradient(90deg, #ff8e53, #ff3b3b);
   --glow: 0 0 20px rgba(255, 107, 107, 0.6);
+} */
+:root {
+  --bg-mobile: linear-gradient(135deg, #ff1e1e, #ff3333, #ff6666);
+  --bg-desktop: radial-gradient(circle at center, #ff2a2a 0%, #ff0000 45%, #ff7070 100%);
+
+  --text: #ffffff;
+  --accent: #ffe6e6;
+  --pill: linear-gradient(90deg, #ff5050, #ff1e1e);
+  --glow: 0 0 40px rgba(255, 0, 0, 0.75);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.badge a{
+  text-decoration: none;
+}
+.badge a:hover {
+  color: #000;
+}
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg-mobile);
@@ -216,6 +231,7 @@ p {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  background-color: #000;
 }
 
 .section-title {
@@ -370,6 +386,8 @@ p {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  background-color: #ff0000;
+  padding-bottom: 10px;
 }
 
 .section-title {
@@ -558,58 +576,124 @@ svg defs {
 
 
 
+/* HERO SECTION */
 .zilliqa-hero {
   min-height: 100vh;
-  padding: 100px 20px 60px;
+  padding: 120px 20px 80px;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* NEW BRIGHT GRADIENT */
+  background: linear-gradient(
+    135deg,
+    #ff1e1e 0%,
+    #ff3b3b 35%,
+    #ff6b6b 70%,
+    #e66666 100%
+  );
+
+  animation: heroGlow 6s ease-in-out infinite alternate;
 }
 
-/* Floating particles */
+/* HERO BACKGROUND ANIMATION */
+@keyframes heroGlow {
+  0% {
+    filter: brightness(1) saturate(1.1);
+  }
+  100% {
+    filter: brightness(1.25) saturate(1.4);
+  }
+}
+
+/* FLOATING PARTICLES */
 #particles {
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.3;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
+/* CONTAINER */
 .container {
-  max-width: 1400px;
+  max-width: 1350px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   text-align: center;
+  padding: 0 20px;
 }
 
-/* MOBILE: EXACT LAYOUT FROM YOUR SCREENSHOT */
+/* WALLET IMAGE */
 .wallet-3d {
-  margin-bottom: 60px;
-  padding: 0 20px;
+  margin-bottom: 50px;
 }
 
 .wallet-img {
   width: 100%;
-  max-width: 380px;
-  filter: drop-shadow(0 30px 60px rgba(255, 59, 59, 0.3));
+  max-width: 420px;
+  filter: drop-shadow(0 40px 90px rgba(255, 50, 50, 0.55));
+
+  /* NEW ANIMATION */
+  animation: floatUpDown 4s ease-in-out infinite;
 }
 
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* TITLE */
 .content h1 {
-  font-size: 52px;
+  font-size: 58px;
   font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 32px;
-  letter-spacing: -1.5px;
+  line-height: 1.08;
+  margin-bottom: 28px;
+  letter-spacing: -1.8px;
+
+  /* BRIGHTER TEXT + ANIMATED GLOW */
+  color: #ffffff;
+  text-shadow: 
+    0 0 20px rgba(255, 80, 80, 0.6),
+    0 0 45px rgba(255, 40, 40, 0.8);
+
+  animation: titlePulse 3.5s ease-in-out infinite alternate;
 }
 
+@keyframes titlePulse {
+  0% {
+    text-shadow:
+      0 0 15px rgba(255, 70, 70, 0.4),
+      0 0 35px rgba(255, 40, 40, 0.55);
+  }
+  100% {
+    text-shadow:
+      0 0 25px rgba(229, 76, 76, 0.9),
+      0 0 60px rgba(255, 50, 50, 1);
+  }
+}
+
+/* SUBTITLE */
 .content p {
-  font-size: 18px;
-  line-height: 1.7;
-  opacity: 0.9;
-  max-width: 90%;
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 630px;
   margin: 0 auto;
   font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
 }
+
+
 
 /* DESKTOP: MIND-BLOWING 2025 HERO */
 @media (min-width: 768px) {
@@ -719,6 +803,7 @@ svg defs {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  background-color: #000;
 }
 
 .faq-title {
@@ -744,7 +829,7 @@ svg defs {
 .faq-btn {
   width: 100%;
   max-width: 380px;
-  background: linear-gradient(135deg, #ff6b6b, #c72c2c);
+  background: linear-gradient(135deg, #bb0808, #fb4848);
   color: white;
   font-size: 20px;
   font-weight: 700;
