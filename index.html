@@ -227,11 +227,11 @@
     <div class="footer-glow"></div>
   </footer>
 
-<!-- Load tsParticles ONCE -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <script>
-  // Desktop particles
+  
   if (window.innerWidth >= 768) {
     tsParticles.load("particles", {
       particles: {
@@ -250,7 +250,7 @@
     });
   }
 
-  // Mobile / general particles
+  
   tsParticles.load("particles", {
     particles: {
       number: { value: 60 },
@@ -265,7 +265,7 @@
   });
 </script>
 
-<!-- Tawk.to Script -->
+
 <script type="text/javascript">
   window.onload = function() {
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -279,8 +279,50 @@
     })();
   };
 </script>
+ -->
 
+ <!-- Load tsParticles ONCE (fixed) -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
+<script>
+  // Initialize particles ONCE with responsive config
+  tsParticles.load("particles", {
+    particles: {
+      number: { value: window.innerWidth >= 768 ? 80 : 60 },
+      color: { 
+        value: window.innerWidth >= 768 ? "#ff6b6b" : ["#ff3b3b", "#ff6b6b", "#ff8e53"]
+      },
+      shape: { type: "circle" },
+      opacity: { value: 0.5, random: true },
+      size: { value: window.innerWidth >= 768 ? 3 : 4, random: true },
+      move: {
+        enable: true,
+        speed: window.innerWidth >= 768 ? 0.5 : 1,
+        direction: window.innerWidth >= 768 ? "none" : "top",
+        outModes: "out"
+      }
+    },
+    interactivity: {
+      events: { onHover: { enable: true, mode: "repulse" } },
+      modes: { repulse: { distance: 100, duration: 0.4 } }
+    },
+    background: { color: "transparent" }
+  });
+</script>
+
+<!-- Tawk.to Script - MOVED OUTSIDE window.onload (CRITICAL) -->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/690645a97909cc195310a6cb/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+</script>
+<!-- End Tawk.to Script --> ?
 
 </body>
 </html>
