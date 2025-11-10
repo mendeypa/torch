@@ -57,13 +57,12 @@ body {
 /* Header */
 header {
   display: flex;
-  justify-content: space-around;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   background-color: #000;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .logo {
   display: flex;
